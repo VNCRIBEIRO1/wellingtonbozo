@@ -21,5 +21,8 @@
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
     "@vercel/analytics": "^1.6.1"
+  },
+  "devDependencies": {
+    "openai": "^6.27.0"
   }
 }

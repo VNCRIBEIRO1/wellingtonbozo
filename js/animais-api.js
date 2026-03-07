@@ -90,13 +90,13 @@ document.addEventListener('DOMContentLoaded', function () {
             const especieIcon = animal.especie === 'cachorro' ? 'fa-dog' : animal.especie === 'gato' ? 'fa-cat' : 'fa-paw';
             const dataFormatada = new Date(animal.data).toLocaleDateString('pt-BR');
             const nome = animal.nome || 'Sem nome';
-            const fotoUrl = animal.foto || 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80';
+            const fotoUrl = animal.foto || 'images/causa-animal.jpg';
             const telClean = (animal.contato_tel || '').replace(/\D/g, '');
 
             return `
                 <div class="animal-card ${tipoClass}" data-aos="fade-up" data-id="${animal.id}">
                     <div class="animal-card-img">
-                        <img src="${fotoUrl}" alt="${nome}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80'">
+                        <img src="${fotoUrl}" alt="${nome}" loading="lazy" onerror="this.src='images/causa-animal.jpg'">
                         <span class="animal-status-badge ${tipoClass}">${tipoLabel}</span>
                         <span class="animal-species"><i class="fas ${especieIcon}"></i></span>
                     </div>

@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             bairro: 'Jardim Maracanã',
             data: '2026-03-01',
             descricao: 'Cachorrinha caramelo de porte médio, muito dócil. Estava com coleira vermelha. Desapareceu na região do Jardim Maracanã.',
-            foto: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&q=80',
+            foto: 'images/causa-animal.jpg',
             contatoNome: 'Maria Silva',
             contatoTel: '(18) 99888-7777',
             status: 'ativo',
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
             bairro: 'Vila Marcondes',
             data: '2026-03-03',
             descricao: 'Gato siamês encontrado na Rua das Flores, Vila Marcondes. Aparenta ser bem cuidado, com coleira azul sem plaquinha. Muito manso e carinhoso.',
-            foto: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&q=80',
+            foto: 'images/causa-animal.jpg',
             contatoNome: 'José Santos',
             contatoTel: '(18) 99777-6666',
             status: 'ativo',
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
             bairro: 'Jardim Bongiovani',
             data: '2026-02-28',
             descricao: 'Golden Retriever macho, 3 anos, muito brincalhão. Saiu pelo portão aberto. Atende pelo nome de Thor. Castrado e vacinado.',
-            foto: 'https://images.unsplash.com/photo-1633722715463-d30f4f325e24?w=400&q=80',
+            foto: 'images/causa-animal.jpg',
             contatoNome: 'Ana Paula',
             contatoTel: '(18) 99666-5555',
             status: 'ativo',
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
             bairro: 'Centro',
             data: '2026-03-05',
             descricao: 'Pinscher pequeno encontrado próximo à praça central. Está assustado mas sem ferimentos. Sem coleira.',
-            foto: 'https://images.unsplash.com/photo-1583337130417-13104dec14a3?w=400&q=80',
+            foto: 'images/causa-animal.jpg',
             contatoNome: 'Carlos Ribeiro',
             contatoTel: '(18) 99555-4444',
             status: 'ativo',
@@ -115,12 +115,12 @@ document.addEventListener('DOMContentLoaded', function () {
             const especieIcon = animal.especie === 'cachorro' ? 'fa-dog' : animal.especie === 'gato' ? 'fa-cat' : 'fa-paw';
             const dataFormatada = new Date(animal.data).toLocaleDateString('pt-BR');
             const nome = animal.nome ? animal.nome : 'Sem nome';
-            const fotoUrl = animal.foto || `https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80`;
+            const fotoUrl = animal.foto || `images/causa-animal.jpg`;
 
             return `
                 <div class="animal-card ${tipoClass}" data-aos="fade-up">
                     <div class="animal-card-img">
-                        <img src="${fotoUrl}" alt="${nome}" onerror="this.src='https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80'">
+                        <img src="${fotoUrl}" alt="${nome}" onerror="this.src='images/causa-animal.jpg'">
                         <span class="animal-status-badge ${tipoClass}">${tipoLabel}</span>
                         <span class="animal-species"><i class="fas ${especieIcon}"></i></span>
                     </div>

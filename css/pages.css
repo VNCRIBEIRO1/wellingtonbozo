@@ -7,24 +7,24 @@
 .page-hero {
     position: relative;
     padding: 120px 0 60px;
-    background: var(--primary) url('https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=1920&q=60') center/cover;
+    background: var(--primary) url('../images/causa-animal.jpg') center/cover;
     min-height: 320px;
     display: flex;
     align-items: center;
 }
 
 .page-hero-health {
-    background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1920&q=60');
+    background-image: url('../images/saude.jpg');
 }
 
 .page-hero-animal {
-    background-image: url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1920&q=60');
+    background-image: url('../images/causa-animal.jpg');
     min-height: 450px;
     padding: 140px 0 80px;
 }
 
 .page-hero-lost {
-    background-image: url('https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1920&q=60');
+    background-image: url('../images/causa-animal.jpg');
 }
 
 .page-hero-overlay {
@@ -671,7 +671,7 @@
 /* ========== DENOUNCE ========== */
 .denounce-section {
     padding: 80px 0;
-    background: var(--secondary) url('https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=1920&q=30') center/cover;
+    background: var(--secondary) url('../images/causa-animal.jpg') center/cover;
     position: relative;
     text-align: center;
 }
