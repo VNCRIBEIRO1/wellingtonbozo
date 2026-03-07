@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Animais Perdidos e Encontrados em Presidente Prudente. Cadastre e encontre seu pet. Vereador Wellington Bozo.">
+    <title>Animais Perdidos & Encontrados | Wellington Bozo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-info">
+                    <a href="mailto:contato@wellingtonbozo.com.br"><i class="fas fa-envelope"></i> contato@wellingtonbozo.com.br</a>
+                    <a href="tel:+5518999999999"><i class="fas fa-phone"></i> (18) 99999-9999</a>
+                    <span><i class="fas fa-map-marker-alt"></i> Presidente Prudente, SP</span>
+                </div>
+                <div class="top-bar-social">
+                    <a href="https://www.facebook.com/VereadorWellingtonBozo/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/bozowellington/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="nav-logo">
+                    <div class="logo-icon"><i class="fas fa-landmark"></i></div>
+                    <div class="logo-text"><span class="logo-name">WELLINGTON</span><span class="logo-surname">BOZO</span></div>
+                </a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="index.html#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="index.html#projetos" class="nav-link">Projetos</a></li>
+                    <li><a href="causa-animal.html" class="nav-link"><i class="fas fa-paw"></i> Causa Animal</a></li>
+                    <li><a href="animais-perdidos.html" class="nav-link active">Animais Perdidos</a></li>
+                    <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#cadastrar" class="btn btn-outline-light nav-btn"><i class="fas fa-plus-circle"></i> Cadastrar Animal</a>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="page-hero page-hero-lost">
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <nav class="breadcrumb">
+                    <a href="index.html">Início</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="causa-animal.html">Causa Animal</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Animais Perdidos</span>
+                </nav>
+                <h1><i class="fas fa-search"></i> Animais Perdidos & Encontrados</h1>
+                <p>Ajude a reunir famílias e seus pets em Presidente Prudente</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTROS E STATUS -->
+    <section class="lost-status-bar">
+        <div class="container">
+            <div class="status-bar-grid">
+                <div class="status-stat">
+                    <i class="fas fa-heart-broken"></i>
+                    <span id="countPerdidos">0</span>
+                    <label>Perdidos</label>
+                </div>
+                <div class="status-stat">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <span id="countEncontrados">0</span>
+                    <label>Encontrados</label>
+                </div>
+                <div class="status-stat found">
+                    <i class="fas fa-home"></i>
+                    <span id="countReunidos">0</span>
+                    <label>Reunidos</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTROS -->
+    <section class="lost-filters">
+        <div class="container">
+            <div class="filters-bar">
+                <div class="filter-group">
+                    <label>Tipo:</label>
+                    <select id="filterTipo">
+                        <option value="todos">Todos</option>
+                        <option value="perdido">Perdidos</option>
+                        <option value="encontrado">Encontrados</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Espécie:</label>
+                    <select id="filterEspecie">
+                        <option value="todos">Todas</option>
+                        <option value="cachorro">Cachorro</option>
+                        <option value="gato">Gato</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+                <div class="filter-group search-group">
+                    <input type="text" id="filterBusca" placeholder="Buscar por bairro, cor, raça...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <button class="btn btn-primary" onclick="filterAnimals()"><i class="fas fa-filter"></i> Filtrar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- LISTA DE ANIMAIS -->
+    <section class="lost-animals-list">
+        <div class="container">
+            <div class="animals-grid" id="animalsGrid">
+                <!-- Cards serão inseridos via JavaScript -->
+            </div>
+            <div class="empty-state" id="emptyState" style="display:none;">
+                <i class="fas fa-paw"></i>
+                <h3>Nenhum animal cadastrado ainda</h3>
+                <p>Seja o primeiro a cadastrar um animal perdido ou encontrado na região.</p>
+                <a href="#cadastrar" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Cadastrar Animal</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DE CADASTRO -->
+    <section class="register-section" id="cadastrar">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-plus-circle"></i> Cadastrar</span>
+                <h2 class="section-title">Cadastrar Animal Perdido ou Encontrado</h2>
+                <div class="section-divider"></div>
+                <p class="section-desc">Preencha o formulário abaixo com o máximo de informações possível para ajudar na identificação</p>
+            </div>
+
+            <div class="register-form-wrapper" data-aos="fade-up">
+                <form class="register-form" id="animalForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="animalTipo"><i class="fas fa-tag"></i> Situação *</label>
+                            <select id="animalTipo" required>
+                                <option value="">Selecione...</option>
+                                <option value="perdido">🔴 Perdi meu animal</option>
+                                <option value="encontrado">🟢 Encontrei um animal</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="animalEspecie"><i class="fas fa-paw"></i> Espécie *</label>
+                            <select id="animalEspecie" required>
+                                <option value="">Selecione...</option>
+                                <option value="cachorro">🐕 Cachorro</option>
+                                <option value="gato">🐈 Gato</option>
+                                <option value="outro">🐾 Outro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="animalNome"><i class="fas fa-id-badge"></i> Nome do Animal</label>
+                            <input type="text" id="animalNome" placeholder="Ex: Rex, Luna, Mel...">
+                        </div>
+                        <div class="form-group">
+                            <label for="animalRaca"><i class="fas fa-dog"></i> Raça</label>
+                            <input type="text" id="animalRaca" placeholder="Ex: Vira-lata, Labrador, Siamês...">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="animalCor"><i class="fas fa-palette"></i> Cor/Pelagem *</label>
+                            <input type="text" id="animalCor" placeholder="Ex: Caramelo, preto e branco, tigrado..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="animalPorte"><i class="fas fa-ruler-vertical"></i> Porte</label>
+                            <select id="animalPorte">
+                                <option value="">Selecione...</option>
+                                <option value="pequeno">Pequeno</option>
+                                <option value="medio">Médio</option>
+                                <option value="grande">Grande</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="animalBairro"><i class="fas fa-map-marker-alt"></i> Bairro / Local *</label>
+                            <input type="text" id="animalBairro" placeholder="Ex: Jardim Maracanã, Centro, Vila Marcondes..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="animalData"><i class="fas fa-calendar-alt"></i> Data *</label>
+                            <input type="date" id="animalData" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="animalDescricao"><i class="fas fa-comment-alt"></i> Descrição / Detalhes</label>
+                        <textarea id="animalDescricao" rows="4" placeholder="Descreva características do animal, coleira, comportamento, se é castrado, etc..."></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="animalFoto"><i class="fas fa-camera"></i> Foto do Animal (URL)</label>
+                        <input type="url" id="animalFoto" placeholder="Cole aqui o link de uma foto (Instagram, Drive, etc.)">
+                        <small>Dica: Envie a foto para o Instagram/Facebook e cole o link aqui, ou use o Google Drive.</small>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contatoNome"><i class="fas fa-user"></i> Seu Nome *</label>
+                            <input type="text" id="contatoNome" placeholder="Seu nome completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contatoTel"><i class="fas fa-phone"></i> Telefone/WhatsApp *</label>
+                            <input type="tel" id="contatoTel" placeholder="(18) 99999-9999" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">
+                        <i class="fas fa-paper-plane"></i> Cadastrar Animal
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- DICAS -->
+    <section class="tips-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-lightbulb"></i> Dicas Importantes</span>
+                <h2 class="section-title">O Que Fazer se Perdeu ou Encontrou um Animal</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="tips-grid">
+                <div class="tips-col" data-aos="fade-up">
+                    <h3 class="tips-title lost-title"><i class="fas fa-heart-broken"></i> Se Você Perdeu Seu Animal</h3>
+                    <div class="tip-item">
+                        <span class="tip-number">1</span>
+                        <p>Cadastre imediatamente nesta plataforma com foto e detalhes</p>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-number">2</span>
+                        <p>Poste nas redes sociais com fotos claras e localização</p>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-number">3</span>
+                        <p>Percorra o bairro nos horários em que o animal costumava passear</p>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-number">4</span>
+                        <p>Deixe roupas com seu cheiro em locais estratégicos</p>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-number">5</span>
+                        <p>Avise pet shops, clínicas veterinárias e protetores da região</p>
+                    </div>
+                </div>
+                <div class="tips-col" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="tips-title found-title"><i class="fas fa-hand-holding-heart"></i> Se Você Encontrou um Animal</h3>
+                    <div class="tip-item">
+                        <span class="tip-number">1</span>
+                        <p>Cadastre aqui com foto e local onde encontrou</p>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-number">2</span>
+                        <p>Verifique se há coleira, plaquinha ou microchip</p>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-number">3</span>
+                        <p>Ofereça água e comida, mas evite assustar o animal</p>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-number">4</span>
+                        <p>Compartilhe nas redes sociais de grupos de animais da cidade</p>
+                    </div>
+                    <div class="tip-item">
+                        <span class="tip-number">5</span>
+                        <p>Entre em contato com protetores ou o gabinete do vereador</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-icon"><i class="fas fa-landmark"></i></div>
+                        <div class="logo-text"><span class="logo-name">WELLINGTON</span><span class="logo-surname">BOZO</span></div>
+                    </a>
+                    <p>Vereador de Presidente Prudente pelo Republicanos. Vice-Presidente da Câmara Municipal.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/VereadorWellingtonBozo/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/bozowellington/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links"><h4>Causa Animal</h4><ul>
+                    <li><a href="causa-animal.html">Hub Causa Animal</a></li>
+                    <li><a href="animais-perdidos.html">Animais Perdidos</a></li>
+                    <li><a href="lei-11644-2025.html">Lei 11.644/2025</a></li>
+                </ul></div>
+                <div class="footer-links"><h4>Navegação</h4><ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul></div>
+                <div class="footer-links"><h4>Links Úteis</h4><ul>
+                    <li><a href="https://camarapprudente.sp.gov.br/" target="_blank">Câmara Municipal</a></li>
+                    <li><a href="https://www.instagram.com/bozowellington/" target="_blank">Instagram</a></li>
+                </ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Wellington Bozo - Vereador de Presidente Prudente.</p></div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animais.js"></script>
+</body>
+</html>
