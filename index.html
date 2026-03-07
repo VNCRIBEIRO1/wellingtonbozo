@@ -521,19 +521,19 @@
                 <div class="contact-form-wrapper" data-aos="fade-left">
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
-                            <input type="text" placeholder="Seu nome completo" required>
+                            <input type="text" name="name" placeholder="Seu nome completo" required>
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Seu e-mail" required>
+                            <input type="email" name="email" placeholder="Seu e-mail" required>
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Assunto">
+                            <input type="text" name="subject" placeholder="Assunto">
                             <i class="fas fa-tag"></i>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Sua mensagem..." rows="5" required></textarea>
+                            <textarea name="message" placeholder="Sua mensagem..." rows="5" required></textarea>
                             <i class="fas fa-comment-alt"></i>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">
@@ -613,5 +613,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

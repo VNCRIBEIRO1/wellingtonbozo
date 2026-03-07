@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const contactForm = document.getElementById('contactForm');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
+        contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
             const btn = this.querySelector('button[type="submit"]');
@@ -163,18 +163,45 @@ document.addEventListener('DOMContentLoaded', function () {
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
             btn.disabled = true;
 
-            // Simulate form submission
-            setTimeout(() => {
+            const payload = {
+                name: this.querySelector('[name="name"]').value,
+                email: this.querySelector('[name="email"]').value,
+                subject: this.querySelector('[name="subject"]').value,
+                message: this.querySelector('[name="message"]').value
+            };
+
+            try {
+                const response = await fetch('/api/contato', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (!result.success) throw new Error(result.error || 'Erro ao enviar');
+
                 btn.innerHTML = '<i class="fas fa-check"></i> Mensagem Enviada!';
                 btn.style.background = '#28a745';
+                contactForm.reset();
 
                 setTimeout(() => {
                     btn.innerHTML = originalText;
                     btn.style.background = '';
                     btn.disabled = false;
-                    contactForm.reset();
                 }, 3000);
-            }, 2000);
+
+            } catch (error) {
+                console.error('Contact form error:', error);
+                btn.innerHTML = '<i class="fas fa-times"></i> Erro ao enviar';
+                btn.style.background = '#dc3545';
+
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 3000);
+            }
         });
     }
 

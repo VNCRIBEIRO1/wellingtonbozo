@@ -1,0 +1,25 @@
+{
+  "name": "bozo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VNCRIBEIRO1/wellingtonbozo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/VNCRIBEIRO1/wellingtonbozo/issues"
+  },
+  "homepage": "https://github.com/VNCRIBEIRO1/wellingtonbozo#readme",
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
+    "@vercel/analytics": "^1.6.1"
+  }
+}
