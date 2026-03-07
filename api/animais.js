@@ -14,28 +14,33 @@ module.exports = async function handler(req, res) {
             const { tipo, especie, busca, status: statusFilter, page = 1, limit = 20 } = req.query;
             const offset = (parseInt(page) - 1) * parseInt(limit);
 
-            let conditions = [];
-            let params = [];
-
-            // Default to active animals
-            const activeStatus = statusFilter || 'ativo';
-            
-            let query = `SELECT * FROM animais WHERE status = '${activeStatus}'`;
+            // Build dynamic query with parameterized values
+            let conditions = [`status = $1`];
+            let params = [statusFilter || 'ativo'];
+            let paramIdx = 2;
 
             if (tipo && tipo !== 'todos') {
-                query += ` AND tipo = '${tipo}'`;
+                conditions.push(`tipo = $${paramIdx}`);
+                params.push(tipo);
+                paramIdx++;
             }
             if (especie && especie !== 'todos') {
-                query += ` AND especie = '${especie}'`;
+                conditions.push(`especie = $${paramIdx}`);
+                params.push(especie);
+                paramIdx++;
             }
             if (busca) {
                 const searchTerm = `%${busca.toLowerCase()}%`;
-                query += ` AND (LOWER(bairro) LIKE '${searchTerm}' OR LOWER(cor) LIKE '${searchTerm}' OR LOWER(raca) LIKE '${searchTerm}' OR LOWER(nome) LIKE '${searchTerm}' OR LOWER(descricao) LIKE '${searchTerm}')`;
+                conditions.push(`(LOWER(bairro) LIKE $${paramIdx} OR LOWER(cor) LIKE $${paramIdx} OR LOWER(raca) LIKE $${paramIdx} OR LOWER(nome) LIKE $${paramIdx} OR LOWER(descricao) LIKE $${paramIdx})`);
+                params.push(searchTerm);
+                paramIdx++;
             }
 
-            query += ` ORDER BY created_at DESC LIMIT ${parseInt(limit)} OFFSET ${offset}`;
+            const whereClause = conditions.join(' AND ');
+            const query = `SELECT * FROM animais WHERE ${whereClause} ORDER BY created_at DESC LIMIT $${paramIdx} OFFSET $${paramIdx + 1}`;
+            params.push(parseInt(limit), offset);
 
-            const animals = await sql(query);
+            const animals = await sql.query(query, params);
 
             // Get counts
             const counts = await sql`
