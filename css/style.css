@@ -407,17 +407,28 @@ ul {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(0, 26, 77, 0.85) 0%, rgba(0, 39, 118, 0.68) 50%, rgba(212, 33, 61, 0.35) 100%);
+    background: linear-gradient(135deg, rgba(0, 26, 77, 0.72) 0%, rgba(0, 39, 118, 0.50) 50%, rgba(212, 33, 61, 0.22) 100%);
 }
 
 /* Overlay específico para a Denúncia Premiada — gradiente lateral para deixar a foto visível */
 .hero-overlay-denuncia {
     background: linear-gradient(
         90deg,
-        rgba(0, 26, 77, 0.90) 0%,
-        rgba(0, 26, 77, 0.70) 40%,
-        rgba(0, 26, 77, 0.30) 65%,
-        rgba(0, 26, 77, 0.05) 100%
+        rgba(0, 26, 77, 0.82) 0%,
+        rgba(0, 26, 77, 0.58) 38%,
+        rgba(0, 26, 77, 0.18) 62%,
+        rgba(0, 26, 77, 0.03) 100%
+    ) !important;
+}
+
+/* Overlay para slide com panorama da cidade — texto à esquerda, cidade visível à direita */
+.hero-overlay-city {
+    background: linear-gradient(
+        90deg,
+        rgba(0, 26, 77, 0.88) 0%,
+        rgba(0, 26, 77, 0.65) 35%,
+        rgba(0, 26, 77, 0.22) 60%,
+        rgba(0, 26, 77, 0.04) 100%
     ) !important;
 }
 
@@ -1385,9 +1396,18 @@ ul {
     .hero-overlay-denuncia {
         background: linear-gradient(
             90deg,
-            rgba(0, 26, 77, 0.94) 0%,
-            rgba(0, 26, 77, 0.82) 50%,
-            rgba(0, 26, 77, 0.55) 100%
+            rgba(0, 26, 77, 0.92) 0%,
+            rgba(0, 26, 77, 0.78) 50%,
+            rgba(0, 26, 77, 0.50) 100%
+        ) !important;
+    }
+
+    .hero-overlay-city {
+        background: linear-gradient(
+            180deg,
+            rgba(0, 26, 77, 0.70) 0%,
+            rgba(0, 26, 77, 0.88) 50%,
+            rgba(0, 26, 77, 0.95) 100%
         ) !important;
     }
 
