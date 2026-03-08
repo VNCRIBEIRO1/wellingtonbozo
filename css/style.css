@@ -394,7 +394,7 @@ ul {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(0, 26, 77, 0.92) 0%, rgba(0, 39, 118, 0.75) 50%, rgba(212, 33, 61, 0.4) 100%);
+    background: linear-gradient(135deg, rgba(0, 26, 77, 0.85) 0%, rgba(0, 39, 118, 0.68) 50%, rgba(212, 33, 61, 0.35) 100%);
 }
 
 /* Overlay específico para a Denúncia Premiada — gradiente lateral para deixar a foto visível */
@@ -739,7 +739,7 @@ ul {
 .achievements-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 26, 77, 0.78);
+    background: rgba(0, 26, 77, 0.65);
 }
 
 .achievements-grid {
@@ -787,7 +787,7 @@ ul {
 
 .timeline {
     position: relative;
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -874,6 +874,37 @@ ul {
     font-size: 0.9rem;
     color: var(--gray-600);
     line-height: 1.6;
+}
+
+/* Timeline Images */
+.timeline-img {
+    position: absolute;
+    top: 20px;
+    width: calc(100% - 60px);
+    height: 160px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 3px solid var(--white);
+}
+
+.timeline-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.timeline-img:hover img {
+    transform: scale(1.08);
+}
+
+.timeline-item:nth-child(odd) .timeline-img {
+    left: calc(100% + 30px);
+}
+
+.timeline-item:nth-child(even) .timeline-img {
+    right: calc(100% + 30px);
 }
 
 /* ========== LAWS ========== */
@@ -972,7 +1003,7 @@ ul {
 /* ========== CTA ========== */
 .cta {
     padding: 100px 0;
-    background: var(--primary) url('../images/cta-bg.jpg') center/cover fixed;
+    background: var(--primary) url('../images/Vista_da_Catedral_-_Praça_9_de_Julho_-_Presidente_Prudente_-_SP.jpg') center/cover fixed;
     position: relative;
     text-align: center;
 }
@@ -980,7 +1011,7 @@ ul {
 .cta-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(0, 26, 77, 0.94), rgba(0, 39, 118, 0.88));
+    background: linear-gradient(135deg, rgba(0, 26, 77, 0.40), rgba(0, 39, 118, 0.30));
 }
 
 .cta-content {
@@ -992,17 +1023,20 @@ ul {
     font-size: 2.5rem;
     color: var(--white);
     margin-bottom: 20px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .cta h2 span {
     color: var(--accent);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .cta p {
-    color: rgba(255,255,255,0.85);
+    color: rgba(255,255,255,0.95);
     font-size: 1.1rem;
     max-width: 600px;
     margin: 0 auto 32px;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .cta-buttons {
@@ -1396,6 +1430,10 @@ ul {
         right: auto !important;
     }
 
+    .timeline-img {
+        display: none;
+    }
+
     .laws-grid {
         grid-template-columns: 1fr;
     }
@@ -1467,21 +1505,17 @@ ul {
 /* ========== ANIMAL CAUSE BANNER ========== */
 .animal-banner {
     padding: 80px 0;
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+    background: var(--primary) url('../images/causa-animal.jpg') center/cover;
     position: relative;
     overflow: hidden;
 }
 
 .animal-banner::before {
-    content: '\f1b0';
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
+    content: '';
     position: absolute;
-    right: -50px;
-    top: -30px;
-    font-size: 300px;
-    color: rgba(255,255,255,0.03);
-    transform: rotate(-15deg);
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 26, 77, 0.88) 0%, rgba(0, 39, 118, 0.80) 50%, rgba(26, 79, 160, 0.75) 100%);
+    z-index: 1;
 }
 
 .animal-banner-content {
@@ -1489,6 +1523,8 @@ ul {
     grid-template-columns: 1fr 1fr;
     gap: 48px;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .animal-banner-text h2 {

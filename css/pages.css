@@ -30,7 +30,7 @@
 .page-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(0,26,77,0.92), rgba(0,39,118,0.7));
+    background: linear-gradient(135deg, rgba(0,26,77,0.82), rgba(0,39,118,0.62));
 }
 
 .page-hero-content {
@@ -679,7 +679,7 @@
 .denounce-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(196,30,58,0.92);
+    background: rgba(196,30,58,0.82);
 }
 
 .denounce-content {
