@@ -731,14 +731,15 @@ ul {
 /* ========== ACHIEVEMENTS ========== */
 .achievements {
     padding: 80px 0;
-    background: var(--primary) url('../images/hero-slide-1.jpg') center/cover fixed;
+    background: var(--primary) url('../images/bozo-reuniao.jpg') center/cover fixed;
     position: relative;
+    image-rendering: auto;
 }
 
 .achievements-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 26, 77, 0.92);
+    background: rgba(0, 26, 77, 0.78);
 }
 
 .achievements-grid {
