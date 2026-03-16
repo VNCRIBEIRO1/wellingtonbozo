@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Indicações Parlamentares - Vereador Wellington Bozo. Requerimentos, moções e indicações para Presidente Prudente.">
+    <title>Indicações | Wellington Bozo - Vereador</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-info">
+                    <a href="mailto:contato@wellingtonbozo.com.br"><i class="fas fa-envelope"></i> contato@wellingtonbozo.com.br</a>
+                    <a href="tel:+5518999999999"><i class="fas fa-phone"></i> (18) 99999-9999</a>
+                    <span><i class="fas fa-map-marker-alt"></i> Presidente Prudente, SP</span>
+                </div>
+                <div class="top-bar-social">
+                    <a href="https://www.facebook.com/VereadorWellingtonBozo/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/bozowellington/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="nav-logo">
+                    <div class="logo-icon"><i class="fas fa-landmark"></i></div>
+                    <div class="logo-text"><span class="logo-name">WELLINGTON</span><span class="logo-surname">BOZO</span></div>
+                </a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="index.html#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="index.html#projetos" class="nav-link">Projetos</a></li>
+                    <li><a href="transparencia.html" class="nav-link"><i class="fas fa-chart-pie"></i> Transparência</a></li>
+                    <li><a href="indicacoes.html" class="nav-link active">Indicações</a></li>
+                    <li><a href="agenda.html" class="nav-link">Agenda</a></li>
+                    <li><a href="causa-animal.html" class="nav-link"><i class="fas fa-paw"></i> Causa Animal</a></li>
+                    <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="causa-animal.html" class="btn btn-outline-light nav-btn"><i class="fas fa-paw"></i> Causa Animal</a>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="page-hero page-hero-indicacoes">
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="hero-tag"><i class="fas fa-file-alt"></i> Indicações Parlamentares</span>
+                <h1>Indicações &<br>Requerimentos 📋</h1>
+                <p>Confira todas as indicações, requerimentos e moções apresentados pelo vereador Wellington Bozo na Câmara Municipal.</p>
+                <div class="hero-buttons">
+                    <a href="#indicacoes-lista" class="btn btn-primary btn-lg"><i class="fas fa-list"></i> Ver Indicações</a>
+                    <a href="#solicitar" class="btn btn-outline-white btn-lg"><i class="fas fa-paper-plane"></i> Fazer Solicitação</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COUNTERS -->
+    <section class="section-counters" data-aos="fade-up">
+        <div class="container">
+            <div class="counters-grid counters-5">
+                <div class="counter-card">
+                    <div class="counter-icon"><i class="fas fa-file-alt"></i></div>
+                    <div class="counter-number" id="countTotal">0</div>
+                    <div class="counter-label">Total</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-icon"><i class="fas fa-hand-point-right"></i></div>
+                    <div class="counter-number" id="countIndicacoes">0</div>
+                    <div class="counter-label">Indicações</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-icon"><i class="fas fa-clipboard-list"></i></div>
+                    <div class="counter-number" id="countRequerimentos">0</div>
+                    <div class="counter-label">Requerimentos</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-icon counter-icon-success"><i class="fas fa-check-circle"></i></div>
+                    <div class="counter-number" id="countAprovados">0</div>
+                    <div class="counter-label">Aprovados</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-icon counter-icon-primary"><i class="fas fa-check-double"></i></div>
+                    <div class="counter-number" id="countAtendidos">0</div>
+                    <div class="counter-label">Atendidos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTERS + CARDS -->
+    <section class="section-dados" id="indicacoes-lista">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-search"></i> Consulta</span>
+                <h2>Buscar Indicações</h2>
+                <p>Pesquise por palavra-chave, tipo, status, bairro ou categoria.</p>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="filters-bar filters-bar-multi" data-aos="fade-up">
+                <div class="filter-group filter-search">
+                    <label for="searchInput"><i class="fas fa-search"></i> Buscar</label>
+                    <input type="text" id="searchInput" placeholder="Pesquisar por título, nº ou descrição...">
+                </div>
+                <div class="filter-group">
+                    <label for="filterTipo"><i class="fas fa-tag"></i> Tipo</label>
+                    <select id="filterTipo">
+                        <option value="todos">Todos</option>
+                        <option value="indicacao">Indicação</option>
+                        <option value="requerimento">Requerimento</option>
+                        <option value="mocao">Moção</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filterStatus"><i class="fas fa-flag"></i> Status</label>
+                    <select id="filterStatus">
+                        <option value="todos">Todos</option>
+                        <option value="em_tramitacao">Em Tramitação</option>
+                        <option value="aprovado">Aprovado</option>
+                        <option value="atendido">Atendido</option>
+                        <option value="arquivado">Arquivado</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filterCategoria"><i class="fas fa-folder"></i> Categoria</label>
+                    <select id="filterCategoria">
+                        <option value="todos">Todas</option>
+                        <option value="infraestrutura">Infraestrutura</option>
+                        <option value="saude">Saúde</option>
+                        <option value="educacao">Educação</option>
+                        <option value="seguranca">Segurança</option>
+                        <option value="transporte">Transporte</option>
+                        <option value="meio_ambiente">Meio Ambiente</option>
+                        <option value="cultura">Cultura</option>
+                        <option value="esporte">Esporte</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filterBairro"><i class="fas fa-map-marker-alt"></i> Bairro</label>
+                    <select id="filterBairro">
+                        <option value="todos">Todos</option>
+                        <option value="Centro">Centro</option>
+                        <option value="Ana Jacinta">Ana Jacinta</option>
+                        <option value="Jardim Bongiovani">Jd. Bongiovani</option>
+                        <option value="Cohab">Cohab</option>
+                        <option value="Bosque">Bosque</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="indicacoes-grid" id="indicacoesGrid"></div>
+
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <i class="fas fa-inbox"></i>
+                <h3>Nenhuma indicação encontrada</h3>
+                <p>Tente alterar os filtros ou faça uma nova pesquisa.</p>
+            </div>
+
+            <div class="load-more-wrapper" data-aos="fade-up">
+                <button id="loadMoreBtn" class="btn btn-outline-primary btn-lg" style="display: none;">
+                    <i class="fas fa-plus"></i> Carregar Mais
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM SOLICITAR -->
+    <section class="section-solicitar" id="solicitar">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-paper-plane"></i> Participação Popular</span>
+                <h2>Faça Sua Solicitação</h2>
+                <p>Envie sua demanda para o gabinete do vereador. Indicações de melhorias para seu bairro, solicitações de serviços públicos e sugestões.</p>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="form-card" data-aos="fade-up">
+                <form id="formIndicacao">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="formTipo"><i class="fas fa-tag"></i> Tipo de Solicitação *</label>
+                            <select name="tipo" id="formTipo" required>
+                                <option value="indicacao">Indicação</option>
+                                <option value="requerimento">Requerimento</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="formCategoria"><i class="fas fa-folder"></i> Categoria *</label>
+                            <select name="categoria" id="formCategoria" required>
+                                <option value="infraestrutura">Infraestrutura</option>
+                                <option value="saude">Saúde</option>
+                                <option value="educacao">Educação</option>
+                                <option value="seguranca">Segurança</option>
+                                <option value="transporte">Transporte</option>
+                                <option value="meio_ambiente">Meio Ambiente</option>
+                                <option value="cultura">Cultura</option>
+                                <option value="esporte">Esporte</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="formTitulo"><i class="fas fa-heading"></i> Título *</label>
+                        <input type="text" name="titulo" id="formTitulo" placeholder="Ex: Recapeamento da Rua XV de Novembro" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="formDescricao"><i class="fas fa-align-left"></i> Descrição *</label>
+                        <textarea name="descricao" id="formDescricao" rows="5" placeholder="Descreva detalhadamente sua solicitação..." required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="formBairro"><i class="fas fa-map-marker-alt"></i> Bairro</label>
+                            <input type="text" name="bairro" id="formBairro" placeholder="Ex: Jardim Bongiovani">
+                        </div>
+                        <div class="form-group form-group-hidden">
+                            <input type="hidden" name="status" value="em_tramitacao">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">
+                        <i class="fas fa-paper-plane"></i> Enviar Solicitação
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-icon"><i class="fas fa-landmark"></i></div>
+                        <div class="logo-text"><span class="logo-name">WELLINGTON</span><span class="logo-surname">BOZO</span></div>
+                    </a>
+                    <p>Vereador de Presidente Prudente pelo Republicanos. Vice-Presidente da Câmara Municipal. Trabalhando pela causa animal e pelo povo.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/VereadorWellingtonBozo/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/bozowellington/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links"><h4>Mandato</h4><ul>
+                    <li><a href="transparencia.html">Transparência</a></li>
+                    <li><a href="indicacoes.html">Indicações</a></li>
+                    <li><a href="agenda.html">Agenda</a></li>
+                    <li><a href="causa-animal.html">Causa Animal</a></li>
+                </ul></div>
+                <div class="footer-links"><h4>Navegação</h4><ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#projetos">Projetos</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul></div>
+                <div class="footer-links"><h4>Links Úteis</h4><ul>
+                    <li><a href="https://camarapprudente.sp.gov.br/" target="_blank">Câmara Municipal</a></li>
+                    <li><a href="https://www.instagram.com/bozowellington/" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/VereadorWellingtonBozo/" target="_blank">Facebook</a></li>
+                </ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Wellington Bozo - Vereador de Presidente Prudente. Todos os direitos reservados.</p></div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/indicacoes.js"></script>
+    <script src="js/chatbot-denuncia.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

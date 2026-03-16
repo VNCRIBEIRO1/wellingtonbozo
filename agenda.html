@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agenda do Vereador Wellington Bozo. Audiências públicas, reuniões, sessões e eventos em Presidente Prudente.">
+    <title>Agenda | Wellington Bozo - Vereador</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-info">
+                    <a href="mailto:contato@wellingtonbozo.com.br"><i class="fas fa-envelope"></i> contato@wellingtonbozo.com.br</a>
+                    <a href="tel:+5518999999999"><i class="fas fa-phone"></i> (18) 99999-9999</a>
+                    <span><i class="fas fa-map-marker-alt"></i> Presidente Prudente, SP</span>
+                </div>
+                <div class="top-bar-social">
+                    <a href="https://www.facebook.com/VereadorWellingtonBozo/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/bozowellington/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="nav-logo">
+                    <div class="logo-icon"><i class="fas fa-landmark"></i></div>
+                    <div class="logo-text"><span class="logo-name">WELLINGTON</span><span class="logo-surname">BOZO</span></div>
+                </a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li><a href="index.html#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="index.html#projetos" class="nav-link">Projetos</a></li>
+                    <li><a href="transparencia.html" class="nav-link"><i class="fas fa-chart-pie"></i> Transparência</a></li>
+                    <li><a href="indicacoes.html" class="nav-link">Indicações</a></li>
+                    <li><a href="agenda.html" class="nav-link active">Agenda</a></li>
+                    <li><a href="causa-animal.html" class="nav-link"><i class="fas fa-paw"></i> Causa Animal</a></li>
+                    <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="causa-animal.html" class="btn btn-outline-light nav-btn"><i class="fas fa-paw"></i> Causa Animal</a>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="page-hero page-hero-agenda">
+        <div class="page-hero-overlay"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="hero-tag"><i class="fas fa-calendar-alt"></i> Agenda Pública</span>
+                <h1>Agenda do<br>Vereador 📅</h1>
+                <p>Acompanhe audiências públicas, reuniões, sessões na câmara e eventos comunitários do mandato.</p>
+                <div class="hero-buttons">
+                    <a href="#proximos" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> Próximos Eventos</a>
+                    <a href="#realizados" class="btn btn-outline-white btn-lg"><i class="fas fa-history"></i> Eventos Realizados</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COUNTERS -->
+    <section class="section-counters" data-aos="fade-up">
+        <div class="container">
+            <div class="counters-grid">
+                <div class="counter-card">
+                    <div class="counter-icon"><i class="fas fa-calendar"></i></div>
+                    <div class="counter-number" id="countTotal">0</div>
+                    <div class="counter-label">Total de Eventos</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-icon"><i class="fas fa-users"></i></div>
+                    <div class="counter-number" id="countAudiencias">0</div>
+                    <div class="counter-label">Audiências Públicas</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-icon"><i class="fas fa-handshake"></i></div>
+                    <div class="counter-number" id="countReunioes">0</div>
+                    <div class="counter-label">Reuniões</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-icon"><i class="fas fa-star"></i></div>
+                    <div class="counter-number" id="countEventos">0</div>
+                    <div class="counter-label">Eventos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRÓXIMOS EVENTOS -->
+    <section class="section-proximos" id="proximos">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-calendar-check"></i> Em Breve</span>
+                <h2>Próximos Eventos</h2>
+                <p>Confira os eventos confirmados na agenda do vereador Wellington Bozo.</p>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="agenda-proximos-grid" id="agendaProximos"></div>
+
+            <div class="empty-state" id="emptyProximos" style="display: none;">
+                <i class="fas fa-calendar-times"></i>
+                <h3>Nenhum evento próximo</h3>
+                <p>Novos eventos serão adicionados em breve. Acompanhe nossas redes sociais.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENTOS REALIZADOS -->
+    <section class="section-realizados" id="realizados">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-history"></i> Histórico</span>
+                <h2>Eventos Realizados</h2>
+                <p>Retrospectiva das atividades já realizadas durante o mandato.</p>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="filters-bar" data-aos="fade-up">
+                <div class="filter-group">
+                    <label for="filterTipo"><i class="fas fa-tag"></i> Tipo</label>
+                    <select id="filterTipo">
+                        <option value="todos">Todos os Tipos</option>
+                        <option value="audiencia">Audiência Pública</option>
+                        <option value="reuniao">Reunião</option>
+                        <option value="evento">Evento</option>
+                        <option value="sessao">Sessão</option>
+                        <option value="visita">Visita</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="agenda-realizados-grid" id="agendaRealizados"></div>
+
+            <div class="empty-state" id="emptyRealizados" style="display: none;">
+                <i class="fas fa-inbox"></i>
+                <h3>Nenhum evento encontrado</h3>
+                <p>Tente alterar o filtro para ver outros tipos de eventos.</p>
+            </div>
+
+            <div class="load-more-wrapper" data-aos="fade-up">
+                <button id="loadMoreBtnRealizados" class="btn btn-outline-primary btn-lg" style="display: none;">
+                    <i class="fas fa-plus"></i> Carregar Mais
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-cta-simple" data-aos="fade-up">
+        <div class="container">
+            <div class="cta-simple-content">
+                <h2>Quer participar de uma audiência pública?</h2>
+                <p>Fique por dentro das audiências e eventos abertos ao público. Entre em contato com o gabinete.</p>
+                <div class="cta-simple-buttons">
+                    <a href="index.html#contato" class="btn btn-primary btn-lg"><i class="fas fa-envelope"></i> Fale Conosco</a>
+                    <a href="transparencia.html" class="btn btn-outline-white btn-lg"><i class="fas fa-chart-pie"></i> Transparência</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-icon"><i class="fas fa-landmark"></i></div>
+                        <div class="logo-text"><span class="logo-name">WELLINGTON</span><span class="logo-surname">BOZO</span></div>
+                    </a>
+                    <p>Vereador de Presidente Prudente pelo Republicanos. Vice-Presidente da Câmara Municipal. Trabalhando pela causa animal e pelo povo.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/VereadorWellingtonBozo/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/bozowellington/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links"><h4>Mandato</h4><ul>
+                    <li><a href="transparencia.html">Transparência</a></li>
+                    <li><a href="indicacoes.html">Indicações</a></li>
+                    <li><a href="agenda.html">Agenda</a></li>
+                    <li><a href="causa-animal.html">Causa Animal</a></li>
+                </ul></div>
+                <div class="footer-links"><h4>Navegação</h4><ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#projetos">Projetos</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul></div>
+                <div class="footer-links"><h4>Links Úteis</h4><ul>
+                    <li><a href="https://camarapprudente.sp.gov.br/" target="_blank">Câmara Municipal</a></li>
+                    <li><a href="https://www.instagram.com/bozowellington/" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/VereadorWellingtonBozo/" target="_blank">Facebook</a></li>
+                </ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Wellington Bozo - Vereador de Presidente Prudente. Todos os direitos reservados.</p></div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/agenda.js"></script>
+    <script src="js/chatbot-denuncia.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
